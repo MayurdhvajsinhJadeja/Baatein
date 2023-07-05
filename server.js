@@ -22,7 +22,7 @@ const io = socketio(server);
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb+srv://mayurdhvajsinhjadeja:Mbj%401833@chatapp.sn0jnx1.mongodb.net/", {
+  .connect("mongourlhere", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
