@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/opg3wle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@multiavatar/multiavatar/multiavatar.min.js"></script>
+    <title>Baatein</title>
+  </head>
+  <body>
+    <!-- <div class="join-container"> -->
+    <div class="join-main">
+      <h1 class="Baatein" style="font-family: 'Comfortaa', cursive; font-size: 4em;">Baatein</h1>
+      <form action="chat.html">
+        <div class="form-control" style="font-weight: bold;">
+          <label style="margin-top: 2%; ">Choose Avatar :</label>
+          <div style="width: 100%;">
+            <div style="display: flex; justify-content:space-between; align-items: center;">
+              <div id="avatarContainer1" style="width: 10%; margin-right: 5%;"></div>
+              <div id="avatarContainer2" style="width: 10%; margin-right: 5%;"></div>
+              <div id="avatarContainer3" style="width: 10%; margin-right: 5%;"></div>
+              <div id="avatarContainer4" style="width: 10%; margin-right: 5%;"></div>
+              <div id="avatarContainer5" style="width: 10%; margin-right: 5%;"></div>
+              <button style="height: 10%; " class="btn2" onclick="location.reload();">Reimagine Avatar</button>
+            </div>
+          </div>
+          <label for="username" style="font-family: 'Comfortaa', cursive"
+            >Username</label
+          >
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter username..."
+            required
+            style="font-family: 'Comfortaa', cursive"
+          />
+          
+        </div>
+        <div class="form-control">
+          <label for="room" style="font-family: 'Comfortaa', cursive;font-weight: bold;"
+            >Room</label
+          >
+          <select
+            name="room"
+            id="room"
+            style="font-family: 'Comfortaa', cursive"
+          >
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          class="btn1"
+          style="font-family: 'Comfortaa', cursive; margin-left: 80%;"
+        >
+          Join
+        </button>
+      </form>
+    </div>
+    <script>  
+      
+      sessionStorage.setItem("username", username);
+    </script>
+    <!-- </div> -->
+    <style>
+      body {
+        font-family: "Comfortaa";
+        font-size: 16px;
+        background: linear-gradient(-45deg, #bebe1e, #f2ffbd, #c7ca1f, #fcffaf);
+        animation: gradient 15s ease infinite;
+        height: 85vh;
+        background-size: 400% 400%;
+        margin: 20px;
+      }
+
+      .join-main {
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;
+        height: 600px;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 25%;
+        }
+        25% {
+          background-position: 25% 50%;
+        }
+        50% {
+          background-position: 50% 75%;
+        }
+        75% {
+          background-position: 75% 100%;
+        }
+        100% {
+          background-position: 100% 0%;
+        }
+      }
+
+      .Baatein {
+        position: relative;
+        margin: 0;
+        color: #000000;
+        font-weight: bolder;
+        font-size: 2em;
+        letter-spacing: 4px;
+        padding-bottom: 20px;
+      }
+      .Baatein::before {
+        content: "Baatein";
+        position: absolute;
+        top: -5px;
+        left: 2;
+        transform-origin: bottom;
+        transform: rotateX(180deg);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(0, #777 0, transparent 68%);
+        line-height: 0.95;
+      }
+    </style>
+    <script>
+      // const multiavatar = require("@multiavatar/multiavatar");
+      const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      function generateString(length) {
+        let result = " ";
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+          result += characters.charAt(
+            Math.floor(Math.random() * charactersLength)
+          );
+        }
+        return result;
+      }
+      document.getElementById("avatarContainer1").innerHTML = multiavatar(generateString(5));
+      document.getElementById("avatarContainer2").innerHTML = multiavatar(generateString(6));
+      document.getElementById("avatarContainer3").innerHTML = multiavatar(generateString(7));
+      document.getElementById("avatarContainer4").innerHTML = multiavatar(generateString(8));
+      document.getElementById("avatarContainer5").innerHTML = multiavatar(generateString(9));
+    </script>
+  </body>
+</html>
